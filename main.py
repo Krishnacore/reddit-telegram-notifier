@@ -28,7 +28,7 @@ async def check_submissions():
                 user_agent='telegram-bot/0.0.1'
             ) as reddit:
                 subreddit = await reddit.subreddit(sub['name'])
-                async for submission in subreddit.stream.submissions():
+                async for submission in subreddit.stream.submissions(skip_existing=True):
                     if any(x in submission.title.lower() for x in sub['keywords']) and submission.link_flair_text in sub['flairs']:
                         logging.info(f'Found new submission in r/{sub["name"]} subreddit: {submission.title}')
                         message = f'New submission in r/{sub["name"]} subreddit:\n{submission.title}\n{submission.url}'
