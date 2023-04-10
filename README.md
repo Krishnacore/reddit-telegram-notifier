@@ -27,9 +27,11 @@ Replace `example_subreddit`, `another_subreddit`, `keyword1`, `keyword2`, and `k
 
 2. Set the following environment variables:
 
+```
 REDDIT_CLIENT_ID: Your Reddit client ID.
 REDDIT_CLIENT_SECRET: Your Reddit client secret.
 TELEGRAM_API_TOKEN: Your Telegram API token.
 TELEGRAM_CHAT_ID: The chat ID of the Telegram chat you want to send messages to.
+```
 
 3. Run the script by running python app/main.py in your terminal. The script will run continuously and send messages to the Telegram chat whenever a new submission is made to a subreddit that matches the keywords specified in `search-config.yml`.
